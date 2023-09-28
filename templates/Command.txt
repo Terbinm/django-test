@@ -1,0 +1,8 @@
+(myenv) PS D:\PythonWeb\datacenter> conda activate myenv        
+(myenv) PS D:\PythonWeb\datacenter> d:
+(myenv) PS D:\PythonWeb\datacenter> cd Data\PythonWeb\datacenter
+(myenv) PS D:\PythonWeb\datacenter> python .\manage.py runserver
+
+
+
+#帳密: admin p33065286

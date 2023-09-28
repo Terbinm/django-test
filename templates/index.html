@@ -1,0 +1,50 @@
+{%extends "base.html" %}
+{% block title %}羅翊迪的網站{% endblock %}
+{% block headmessage %}<h1>LED的後台2</h1>{% endblock %}
+{% block content %}
+<hr>
+<a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.1/components/buttons/" role="button">
+  大樂透預測:{{lotto}}
+</a>
+<hr>
+<h3>
+  {% for n in lotto %}
+  {{ n }},
+  {% endfor %}
+</h3>
+<form action="/" method="POST">
+  {% csrf_token %}
+  你的小道消息：
+  <input type="text" size=50 name="title" required>
+  <input type="submit" value="送出">
+</form>
+
+<table class="table table-striped table-hover">
+  <tr>
+    <td>
+      新聞標題
+    </td>
+    <td>
+      張貼時間
+    </td>
+    <td>
+      管理
+    </td>
+  </tr>
+  {% for item in news %}
+  <tr>
+    <td>
+      {{ item.title}}
+    </td>
+    <td>
+      {{item.pdate}}
+    </td>
+    <td>
+      <a class="btn btn-sm btn-outline-danger" href="/delete/{{item.id}}/">
+        刪除
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
